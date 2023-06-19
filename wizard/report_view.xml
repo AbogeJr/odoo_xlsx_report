@@ -28,3 +28,5 @@
    <menuitem id="excel_reprort" name="Excel Report" action="action_xlsx_repoort" sequence="20" />
   </data>
 </odoo>
+
+<!-- parent="stock.menu_stock_warehouse_mgmt" -->

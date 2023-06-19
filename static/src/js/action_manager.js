@@ -10,7 +10,6 @@ registry.category("ir.actions.report handlers").add("xlsx", async (action) => {
     session.get_file({
       url: "/xlsx_reports",
       data: action.data,
-      token: action.token,
       success: def.resolve.bind(def),
       error: (error) => this.call("crash_manager", "rpc_error", error),
       complete: framework.unblockUI,
