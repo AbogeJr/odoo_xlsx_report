@@ -23,6 +23,7 @@ class ExcelWizard(models.TransientModel):
     )
 
     def print_xlsx(self):
+        print("\n\n Print XLSX \n\n")
         if self.start_date > self.end_date:
             raise ValidationError("Start Date must be less than End Date")
         data = {
@@ -41,8 +42,8 @@ class ExcelWizard(models.TransientModel):
         }
 
     def get_xlsx_report(self, data, response):
-        from_date = data["from_date"]
-        to_date = data["to_date"]
+        from_date = data["start_date"]
+        to_date = data["end_date"]
         output = io.BytesIO()
         workbook = xlsxwriter.Workbook(output, {"in_memory": True})
         sheet = workbook.add_worksheet()
